@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"path": "../"
+		}
+	],
+	"settings": {
+		"[sql]": {
+			"editor.defaultFormatter": "mtxr.sqltools"
+		}
+	},
+	"extensions": {
+		"recommendations": ["mtxr.sqltools", "ms-ossdata.vscode-postgresql"]
+	}
+}
