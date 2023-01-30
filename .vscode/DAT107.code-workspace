@@ -19,7 +19,7 @@
 				"server": "ider-database.westeurope.cloudapp.azure.com",
 				"port": 5432,
 				"driver": "PostgreSQL",
-				"name": "DAT107",
+				"name": "DAT107-h598062",
 				"username": "h598062",
 				"password": "pass",
 				"database": "h598062"
