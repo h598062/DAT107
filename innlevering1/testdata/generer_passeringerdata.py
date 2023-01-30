@@ -6,10 +6,10 @@ import sys
 
 if len(sys.argv) > 1:
 	antall, cwd = sys.argv[1].split(" ")
-	antall = int(antall)
+	antall = int(antall) * 3
 	print(cwd)
 else:
-	antall = 100
+	antall = 300
 	cwd = os.getcwd()
 	print(cwd)
 
@@ -39,6 +39,22 @@ for i in range(0, antall):
 	tid = random_time.strftime("%H:%M:%S")
 
 	utlinje = f'insert into passeringer (bomnr, dato, tidspunkt, regnr, pris) values(\'{bomnr}\',\'{dato}\',\'{tid}\',\'{regnr}\',{pris});\n'
+	utfil.write(utlinje)
+
+# legg inn noen passeringer uten regnr
+for i in range(0, 20):
+	bomnr = random.randint(100, 131)
+	pris = 5 * round(random.randint(20, 50) / 5)
+
+	random_date = start_date + datetime.timedelta(seconds=random.randint(0, int((end_date - start_date).total_seconds())))
+	dato = random_date.strftime("%Y-%m-%d")
+
+	delta = datetime.timedelta(seconds=random.randint(0, int((end_time - start_time).total_seconds())))
+	random_datetime = start_time + delta
+	random_time = random_datetime.time()
+	tid = random_time.strftime("%H:%M:%S")
+
+	utlinje = f'insert into passeringer (bomnr, dato, tidspunkt, pris) values(\'{bomnr}\',\'{dato}\',\'{tid}\',{pris});\n'
 	utfil.write(utlinje)
 
 regnrfil.close()
