@@ -35,7 +35,7 @@ for line in naveliste:
 	postnr = random.randint(1000, 9999)
 	adresse = "" + random.choice(gatested) + " " + random.choice(gatetype) + " " + str(random.randint(1, 174))
 	regnr = regnrfil.readline().strip()
-	utlinje = f'insert into kundedata (regnr, etternavn, fornavn, adresse, postnr, tlf, epost, passeringer) values(\'{regnr}\',\'{etternavn}\',\'{fornavn}\',\'{adresse}\',\'{postnr}\',\'{tlfnr}\',\'{epost}\',0);\n'
+	utlinje = f'insert into kundedata (regnr, etternavn, fornavn, adresse, postnr, tlf, epost) values(\'{regnr}\',\'{etternavn}\',\'{fornavn}\',\'{adresse}\',\'{postnr}\',\'{tlfnr}\',\'{epost}\');\n'
 	utfil.write(utlinje)
 
 navnefil.close()
