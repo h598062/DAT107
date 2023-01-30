@@ -33,7 +33,8 @@
 			"mtxr.sqltools",
 			"ms-ossdata.vscode-postgresql",
 			"ms-python.vscode-pylance",
-			"ms-python.python"
+			"ms-python.python",
+			"mtxr.sqltools-driver-pg"
 		]
 	}
 }

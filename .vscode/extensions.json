@@ -1,3 +1,9 @@
 {
-	"recommendations": ["mtxr.sqltools", "ms-ossdata.vscode-postgresql", "ms-python.vscode-pylance", "ms-python.python"]
+	"recommendations": [
+		"mtxr.sqltools",
+		"ms-ossdata.vscode-postgresql",
+		"ms-python.vscode-pylance",
+		"ms-python.python",
+		"mtxr.sqltools-driver-pg"
+	]
 }
