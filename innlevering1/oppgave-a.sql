@@ -21,10 +21,8 @@ CREATE TABLE passeringer(
 	-- Bommen bilen passerer, skal vi si at bommene har et navn, eller et nummer som id?
 	bomnr VARCHAR(10) NOT NULL,
 	-- Dato og tid skal bli automatisk generert av programmet
-	-- Dato på format: 'YYYY-MM-DD'
-	dato DATE NOT NULL,
-	-- Tid på format: "HH:MM:SS"
-	tidspunkt TIME NOT NULL,
+	-- Dato og tid på format: 'YYYY-MM-DD HH:MM:SS'
+	tidspunkt TIMESTAMP NOT NULL,
 	-- REGNR varchar(10) hvis vi skal støtte ikke-norske numre og
 	-- lengste regnr eg fant i europa var 9 lang
 	-- vi må legge inn at denne kan være tom
@@ -46,11 +44,10 @@ CREATE TABLE passeringer(
 -- 		'ole.nordmann@example.com'
 -- 	);
 -- logikk i passeringer tabell skal automatisk øke passeringer for denne regnummer i regnummer tabell
--- insert into passeringer (bomnr, dato, tidspunkt, regnr, pris)
+-- insert into passeringer (bomnr, tidspunkt, regnr, pris)
 -- values(
 -- 		'gvdsvfb',
--- 		'2023-01-20',
--- 		'09:33:04',
+-- 		'2023-01-20 09:33:04',
 -- 		'SV69420',
 -- 		40
 -- 	);

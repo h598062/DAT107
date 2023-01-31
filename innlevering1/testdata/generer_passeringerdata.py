@@ -38,7 +38,9 @@ for i in range(0, antall):
 	random_time = random_datetime.time()
 	tid = random_time.strftime("%H:%M:%S")
 
-	utlinje = f'insert into passeringer (bomnr, dato, tidspunkt, regnr, pris) values(\'{bomnr}\',\'{dato}\',\'{tid}\',\'{regnr}\',{pris});\n'
+	tidspunkt = f'{dato} {tid}'
+
+	utlinje = f'insert into passeringer (bomnr, tidspunkt, regnr, pris) values(\'{bomnr}\',\'{tidspunkt}\',\'{regnr}\',{pris});\n'
 	utfil.write(utlinje)
 
 # legg inn noen passeringer uten regnr
@@ -54,7 +56,9 @@ for i in range(0, 20):
 	random_time = random_datetime.time()
 	tid = random_time.strftime("%H:%M:%S")
 
-	utlinje = f'insert into passeringer (bomnr, dato, tidspunkt, pris) values(\'{bomnr}\',\'{dato}\',\'{tid}\',{pris});\n'
+	tidspunkt = f'{dato} {tid}'
+
+	utlinje = f'insert into passeringer (bomnr, tidspunkt, pris) values(\'{bomnr}\',\'{tidspunkt}\',{pris});\n'
 	utfil.write(utlinje)
 
 regnrfil.close()

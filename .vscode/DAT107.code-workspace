@@ -29,12 +29,6 @@
 		"python.formatting.yapfArgs": ["use_tabs=true"]
 	},
 	"extensions": {
-		"recommendations": [
-			"mtxr.sqltools",
-			"ms-ossdata.vscode-postgresql",
-			"ms-python.vscode-pylance",
-			"ms-python.python",
-			"mtxr.sqltools-driver-pg"
-		]
+		"recommendations": ["mtxr.sqltools", "ms-python.vscode-pylance", "ms-python.python", "mtxr.sqltools-driver-pg"]
 	}
 }
