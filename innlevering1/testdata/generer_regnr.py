@@ -1,24 +1,23 @@
-import os
+""" Lager registreringsnumre og lagrer dem i filen regnr.txt
+"""
 import random
 import string
-import sys
 
-if len(sys.argv) > 1:
-	antall, cwd = sys.argv[1].split(" ")
-	antall = int(antall)
-	print(cwd)
-else:
-	antall = 100
-	cwd = os.getcwd()
-	print(cwd)
 
-def lag_regnr():
-    letters = string.ascii_uppercase
-    return "".join(random.choices(letters, k=2)) + str(random.randint(10000, 99999))
+def main():
+    """main funksjon"""
 
-f = open(cwd + "/regnr.txt", "w")
+    def lag_regnr():
+        letters = string.ascii_uppercase
+        return "".join(random.choices(letters, k=2)) + str(random.randint(10000, 99999))
 
-for i in range(0, antall):
-	regnr = lag_regnr()
-	f.write(f'{regnr}\n')
-f.close()
+    f = open("./regnr.txt", "w", encoding="utf-8")
+
+    for i in range(0, 100):
+        regnr = lag_regnr()
+        f.write(f"{regnr}\n")
+    f.close()
+
+
+if __name__ == "__main__":
+    main()

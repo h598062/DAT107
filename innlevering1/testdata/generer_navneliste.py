@@ -1,29 +1,27 @@
-import os
+""" Genererer en liste med navn fra etternavn.txt og fornavn.txt
+"""
 import random
-import sys
 
-if len(sys.argv) > 1:
-	antall, cwd = sys.argv[1].split(" ")
-	antall = int(antall)
-	print(cwd)
-else:
-	antall = 100
-	cwd = os.getcwd()
-	print(cwd)
 
-etternavnFil = open(cwd + "/etternavn.txt", "rt")
-fornavnFil = open(cwd + "/fornavn.txt", "rt")
+def main():
+    """main funksjon"""
+    etternavn_fil = open("./etternavn.txt", "rt", encoding="utf-8")
+    fornavn_fil = open("./fornavn.txt", "rt", encoding="utf-8")
 
-etternavnListe = etternavnFil.readlines()
-fornavnListe = fornavnFil.readlines()
+    etternavn_liste = etternavn_fil.readlines()
+    fornavn_liste = fornavn_fil.readlines()
 
-utfil = open(cwd + "/navneliste.txt", "w")
+    utfil = open("./navneliste.txt", "w", encoding="utf-8")
 
-for i in range(0, antall):
-	etternavn = random.choice(etternavnListe).strip()
-	fornavn = random.choice(fornavnListe).strip()
-	utfil.write(f'{fornavn} {etternavn}\n')
+    for i in range(0, 100):
+        etternavn = random.choice(etternavn_liste).strip()
+        fornavn = random.choice(fornavn_liste).strip()
+        utfil.write(f"{fornavn} {etternavn}\n")
 
-etternavnFil.close()
-fornavnFil.close()
-utfil.close()
+    etternavn_fil.close()
+    fornavn_fil.close()
+    utfil.close()
+
+
+if __name__ == "__main__":
+    main()

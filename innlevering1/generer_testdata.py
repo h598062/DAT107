@@ -1,15 +1,47 @@
-# Lager all testdata
-# alle filene under kan også kjøres seperat
-import os
+""" Lager all testdata
+    alle filene under kan også kjøres seperat
+"""
 import subprocess
 import sys
+import os
 
-antall = sys.argv[1] if len(sys.argv) > 1 else 100
 
-p = "testdata/"
+def main():
+    """main funksjon"""
 
-args = f"{antall} {os.getcwd()}\\{p}"
-subprocess.run(["python", "-Xfrozen_modules=off", f"./{p}generer_navneliste.py", args], stdout=sys.stdout, check=True)
-subprocess.run(["python", "-Xfrozen_modules=off", f"./{p}generer_regnr.py", args], stdout=sys.stdout, check=True)
-subprocess.run(["python", "-Xfrozen_modules=off", f"./{p}generer_kundedata.py", args], stdout=sys.stdout, check=True)
-subprocess.run(["python", "-Xfrozen_modules=off", f"./{p}generer_passeringerdata.py", args], stdout=sys.stdout, check=True)
+    frznmodulestr = "-Xfrozen_modules=off"
+
+    newcwd = os.getcwd() + "/testdata"
+
+    subprocess.run(
+        ["python", frznmodulestr, "./testdata/generer_navneliste.py"],
+        stdout=sys.stdout,
+        check=True,
+        cwd=newcwd,
+    )
+    subprocess.run(
+        ["python", frznmodulestr, "./testdata/generer_regnr.py"],
+        stdout=sys.stdout,
+        check=True,
+        cwd=newcwd,
+    )
+    subprocess.run(
+        ["python", frznmodulestr, "./testdata/generer_kundedata.py"],
+        stdout=sys.stdout,
+        check=True,
+        cwd=newcwd,
+    )
+    subprocess.run(
+        [
+            "python",
+            frznmodulestr,
+            "./testdata/generer_passeringerdata.py",
+        ],
+        stdout=sys.stdout,
+        check=True,
+        cwd=newcwd,
+    )
+
+
+if __name__ == "__main__":
+    main()

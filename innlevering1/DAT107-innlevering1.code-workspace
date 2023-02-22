@@ -1,12 +1,21 @@
 {
 	"folders": [
 		{
-			"path": "../"
+			"path": "./"
 		}
 	],
 	"settings": {
 		"[sql]": {
 			"editor.defaultFormatter": "mtxr.sqltools"
+		},
+		"[python]": {
+			"diffEditor.ignoreTrimWhitespace": false,
+			"gitlens.codeLens.symbolScopes": ["!Module"],
+			"editor.inlineSuggest.allowQuickSuggestions": true,
+			"editor.inlineSuggest.allowSuggestOnTriggerCharacters": true,
+			"editor.wordBasedSuggestions": false,
+			"editor.defaultFormatter": "ms-python.black-formatter",
+			"editor.formatOnSave": true
 		},
 		"sqltools.connections": [
 			{
@@ -25,8 +34,7 @@
 				"database": "h598062"
 			}
 		],
-		"python.formatting.provider": "yapf",
-		"python.formatting.yapfArgs": ["use_tabs=true"]
+		"python.formatting.provider": "black"
 	},
 	"extensions": {
 		"recommendations": ["mtxr.sqltools", "ms-python.vscode-pylance", "ms-python.python", "mtxr.sqltools-driver-pg"]
