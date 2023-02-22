@@ -1,9 +1,7 @@
 """ Lager en sql fil med passeringer som kan legges inn i database
 """
-import os
 import random
 import datetime
-import sys
 
 
 def main():
