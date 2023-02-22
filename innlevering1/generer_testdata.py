@@ -14,19 +14,19 @@ def main():
     newcwd = os.getcwd() + "/testdata"
 
     subprocess.run(
-        ["python", frznmodulestr, "./testdata/generer_navneliste.py"],
+        ["python", frznmodulestr, "./generer_navneliste.py"],
         stdout=sys.stdout,
         check=True,
         cwd=newcwd,
     )
     subprocess.run(
-        ["python", frznmodulestr, "./testdata/generer_regnr.py"],
+        ["python", frznmodulestr, "./generer_regnr.py"],
         stdout=sys.stdout,
         check=True,
         cwd=newcwd,
     )
     subprocess.run(
-        ["python", frznmodulestr, "./testdata/generer_kundedata.py"],
+        ["python", frznmodulestr, "./generer_kundedata.py"],
         stdout=sys.stdout,
         check=True,
         cwd=newcwd,
@@ -35,7 +35,7 @@ def main():
         [
             "python",
             frznmodulestr,
-            "./testdata/generer_passeringerdata.py",
+            "./generer_passeringerdata.py",
         ],
         stdout=sys.stdout,
         check=True,
